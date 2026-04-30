@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippe K. | Art & Architecture</title>
+    <style>
+        /* Styles Généraux */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --accent-color: #888;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover;
+        }
+        header h1 { font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; text-transform: uppercase; color: var(--accent-color); }
+
+        nav {
+            position: sticky; top: 0; background: rgba(10, 10, 10, 0.95);
+            padding: 20px; text-align: center; border-bottom: 1px solid #333; z-index: 1000;
+        }
+        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--accent-color); }
+
+        section { padding: 80px 10%; }
+        h2 { border-left: 4px solid var(--accent-color); padding-left: 15px; margin-bottom: 40px; }
+
+        /* Grilles de Galerie */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .item {
+            background: #151515;
+            padding: 15px;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .item:hover { transform: translateY(-10px); }
+        .item img { width: 100%; border-radius: 2px; filter: grayscale(50%); transition: 0.5s; }
+        .item img:hover { filter: grayscale(0%); }
+
+        /* Formulaire */
+        form { display: flex; flex-direction: column; max-width: 600px; margin: auto; }
+        input, textarea {
+            padding: 15px; margin-bottom: 15px; border: 1px solid #333;
+            background: #1a1a1a; color: white;
+        }
+        button {
+            padding: 15px; background: white; color: black; border: none;
+            cursor: pointer; font-weight: bold; text-transform: uppercase;
+        }
+        button:hover { background: var(--accent-color); color: white; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #333; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Z.KREATOR 72</h1>
+        <p>Graphisme | Architecture | Design</p>
+    </header>
+
+    <nav>
+        <a href="#about">À PROPOS</a>
+        <a href="#portraits">PORTRAITS</a>
+        <a href="#architecture">ARCHITECTURE</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <section id="about">
+        <h2>À Propos de Moi</h2>
+        <p>
+            Artiste visuel et chercheur passionné par l'équilibre entre l'art et l'espace. 
+            Spécialisé dans les portraits hyper-réalistes au graphite, mon travail explore la précision du détail humain 
+            tout en intégrant une vision architecturale moderne. Basé à Bukavu, j'allie esthétique et fonctionnalité dans chaque projet.
+        </p>
+    </section>
+
+    <section id="portraits">
+        <h2>Galerie de Portraits</h2>
+        <div class="grid">
+            <div class="item">
+                <img src="https://via.placeholder.com/400x500" alt="Portrait Graphite">
+                <h3>Réalisme Graphite</h3>
+                <p>Étude de textures et de lumière sur papier.</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="architecture">
+        <h2>Croquis Architecturaux</h2>
+        <div class="grid">
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Croquis Architecture">
+                <h3>Concepts Spatiaux</h3>
+                <p>Planification et design de structures modernes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Collaborons Ensemble</h2>
+        <form>
+            <input type="text" placeholder="Votre Nom" required>
+            <input type="email" placeholder="Votre Email" required>
+            <textarea rows="5" placeholder="Parlez-moi de votre projet (Portrait, Plan, Design...)" required></textarea>
+            <button type="submit">Envoyer le Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Z.KREATOR 72 - Philippe Kahayira Kabugu. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
