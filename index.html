@@ -32,12 +32,22 @@
         header p { font-size: 1.2rem; text-transform: uppercase; color: var(--accent-color); }
 
         nav {
-            position: sticky; top: 0; background: rgba(10, 10, 10, 0.95);
-            padding: 20px; text-align: center; border-bottom: 1px solid #333; z-index: 1000;
-        }
-        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; transition: 0.3s; }
-        nav a:hover { color: var(--accent-color); }
+    position: sticky;
+    top: 0;
+    background: white; /* Fond blanc */
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
 
+nav a {
+    color: black !important; /* Texte noir */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+        
         section { padding: 80px 10%; }
         h2 { border-left: 4px solid var(--accent-color); padding-left: 15px; margin-bottom: 40px; }
 
@@ -112,18 +122,35 @@
 </style>
 </head>
 <body>
+    <script>
+function toggleMenu() {
+    var menu = document.getElementById("sideNav");
+    if (menu.style.width === "100%") {
+        menu.style.width = "0";
+    } else {
+        menu.style.width = "100%";
+    }
+}
+</script>
+
 
     <header>
         <h1>Philippe Kahayira 72</h1>
         <p>Graphisme | Architecture | Design</p>
     </header>
 
-    <nav>
-        <a href="#about">À PROPOS</a>
-        <a href="#portraits">PORTRAITS</a>
-        <a href="#architecture">ARCHITECTURE</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="sideNav" class="overlay">
+    <div class="close-btn" onclick="toggleMenu()">&times;</div>
+    <div class="overlay-content">
+        <a href="#home" onclick="toggleMenu()">HOME</a>
+        <a href="#about" onclick="toggleMenu()">À PROPOS</a>
+        <a href="#portraits" onclick="toggleMenu()">PORTRAITS</a>
+        <a href="#architecture" onclick="toggleMenu()">ARCHITECTURE</a>
+        <a href="#contact" onclick="toggleMenu()">CONTACT</a>
+    </div>
+</nav>
 
     <section id="about">
         <h2>À Propos de Moi</h2>
